@@ -1,0 +1,27 @@
+module.exports = function (sequelize, Datatypes) {
+  const Course = sequelize.define(
+    "courses",
+    {
+      lecturerId: Datatypes.Integer,
+      courseName: Datatypes.STRING,
+    },
+    {
+      tableName: "courses",
+      timestamps: false,
+    }
+  );
+
+  Course.associate = function (models) {
+    Course.belongsToMany(models.users, {
+        through: "userCourses",
+        as: "users",
+        foreignKey: "courseId"
+    });
+    Course.belongsTo(models.lecturers, {
+        foreignKey: "lecturerId",
+        as: "lecturers"
+    });
+  };
+
+  return Course;
+};
