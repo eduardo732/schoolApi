@@ -61,7 +61,7 @@ container
     TeacherController: asClass(TeacherController).singleton(),
     CourseController: asClass(CourseController).singleton(),
     StudentRoutes: asFunction(StudentRoutes).singleton(),
-    TeacherRoutes: asFunctuin(TeacherRoutes).singleton(),
+    TeacherRoutes: asFunction(TeacherRoutes).singleton(),
     CourseRoutes: asFunction(CourseRoutes).singleton(),
   })
   .register({

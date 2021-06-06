@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       Section.belongsTo(models.Teacher);
       Section.belongsTo(models.Course);
       Section.belongsTo(models.Subject);
-      Section.belongsToMany(models.Students, {
+      Section.belongsToMany(models.Student, {
         through: "Registration",
         as: "students",
         foreignKey: "sectionId"
